@@ -42,17 +42,18 @@
 И все пойдет само.
 
 ## Если AFL++ не установлен
-Идем по ссылке на гайд
-https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md
 
-Если делаете на домашней системе, то выполняем весь скрипт.
-Если на сервере - то сразу:
+### Если вы сервере - то:
 git clone https://github.com/AFLplusplus/AFLplusplus
 ```
-cd AFLplusplus
-make distrib
-sudo make install
+./install_afl.sh
 ```
+
+### Если делаете на домашней системе, идем по ссылке на гайд
+https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md
+
+И выполняем весь скрипт.
+
 **После этого необходимо добавить переменную окружения, которая указывает путь до AFL**
 
 Например
