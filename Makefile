@@ -1,3 +1,4 @@
+CC=afl-clang-fast
 ASAN_FLAG= -fsanitize=address
 DEBUG_CFLAGS=$(ASAN_FLAG) -g
 CFLAGS = -O2
@@ -23,5 +24,6 @@ fuzz: debug
 	rm -rf in out
 	mkdir in out 
 	echo 1 >> in/1
+	afl-fuzz -i in -o out -- /bin_asan
 
 
