@@ -44,7 +44,7 @@
 ## Если AFL++ не установлен
 
 ### Если вы сервере - то:
-git clone https://github.com/AFLplusplus/AFLplusplus
+
 ```
 ./install_afl.sh
 ```
