@@ -1,4 +1,4 @@
-CC=afl-clang-fast
+CC_AFL=$(AFL_PATH)afl-clang-fast
 ASAN_FLAG= -fsanitize=address
 DEBUG_CFLAGS=$(ASAN_FLAG) -g
 CFLAGS = -O2
@@ -12,9 +12,9 @@ all:
 	$(CC) -c $(TARGET_LIB) $(CFLAGS) -o $(TARGET_LIB).o
 	$(CC) $(TARGET_LIB) $(TARGET) $(LDFLAGS) -o $(BIN) 
 debug:
-	$(CC) -c $(DEBUG_CFLAGS) $(TARGET)  -o $(TARGET).o -Wall -Wextra 
-	$(CC) -c $(DEBUG_CFLAGS) $(TARGET_LIB) -o $(TARGET_LIB).o -Wall -Wextra 
-	$(CC) $(TARGET).o $(TARGET_LIB).o $(LDFLAGS) $(ASAN_FLAG) -o $(BIN)_asan
+	$(CC_AFL) -c $(DEBUG_CFLAGS) $(TARGET)  -o $(TARGET).o -Wall -Wextra 
+	$(CC_AFL) -c $(DEBUG_CFLAGS) $(TARGET_LIB) -o $(TARGET_LIB).o -Wall -Wextra 
+	$(CC_AFL) $(TARGET).o $(TARGET_LIB).o $(LDFLAGS) $(ASAN_FLAG) -o $(BIN)_asan
 clean:
 	rm -rf in out
 	rm $(BIN)*
@@ -24,6 +24,6 @@ fuzz: debug
 	rm -rf in out
 	mkdir in out 
 	echo 1 >> in/1
-	afl-fuzz -i in -o out -- /bin_asan
+	$(AFL_PATH)/afl-fuzz -i in -o out -- ./bin_asan
 
 
