@@ -5,7 +5,7 @@ CFLAGS = -O2
 LDFLAGS = -lreadline 
 BIN = bin
 TARGET = main.c
-TARGET_LIB=lib/string.c
+TARGET_LIB=lib/*.c
 
 all:
 	$(CC) -c $(TARGET) $(CFLAGS) -o $(TARGET).o
