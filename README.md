@@ -40,3 +40,26 @@
 `make fuzz`
 
 И все пойдет само.
+
+## Если AFL++ не установлен
+Идем по ссылке на гайд
+https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md
+
+Если делаете на домашней системе, то выполняем весь скрипт.
+Если на сервере - то сразу:
+git clone https://github.com/AFLplusplus/AFLplusplus
+```
+cd AFLplusplus
+make distrib
+sudo make install
+```
+**После этого необходимо добавить переменную окружения, которая указывает путь до AFL**
+Например
+```
+export AFL_PATH=~/AFLplusplus/
+```
+Далее 
+
+`make fuzz`
+
+И все пойдет само.
