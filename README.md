@@ -54,6 +54,7 @@ make distrib
 sudo make install
 ```
 **После этого необходимо добавить переменную окружения, которая указывает путь до AFL**
+
 Например
 ```
 export AFL_PATH=~/AFLplusplus/
