@@ -31,4 +31,4 @@
 
 Если будут краши - появятся красные цифры, как здесь
 
-![AFL crush!](/docks/afl.jpg "AFL")
+![AFL crush!](/docks/afl.png.jpg "AFL")
