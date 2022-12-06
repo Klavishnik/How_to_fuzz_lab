@@ -22,18 +22,20 @@ afl-clang-fast
 ```
 ./install_afl.sh
 ```
-
-### Если делаете на домашней системе, идем по ссылке на гайд
-https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md
-
-И выполняем весь скрипт.
-
 ### После этого необходимо добавить переменную окружения, которая указывает путь до AFL
 
 Например
 ```
 export AFL_PATH=~/AFLplusplus/
 ```
+
+
+### Если делаете на домашней системе, идем по ссылке на гайд
+https://github.com/AFLplusplus/AFLplusplus/blob/stable/docs/INSTALL.md
+
+И выполняем весь скрипт.
+
+
 
 ## Выполнение тестового примера
 
