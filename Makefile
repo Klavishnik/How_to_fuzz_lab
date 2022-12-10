@@ -24,6 +24,6 @@ fuzz: debug
 	rm -rf in out
 	mkdir in out 
 	echo 1 >> in/1
-	$(AFL_PATH)/afl-fuzz -i in -o out -- ./bin_asan
+	$(AFL_PATH)afl-fuzz -i in -o out -- ./bin_asan
 
 
