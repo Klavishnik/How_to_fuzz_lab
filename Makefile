@@ -24,6 +24,8 @@ fuzz: debug
         rm -rf in out
         mkdir in out
         echo 1 >> in/1
+        echo "l" >> in/2
+        echo "ф" >> in/3
         tmux new-session -d -s my_session -n Window1 '$(AFL_PATH)afl-fuzz -i in -o out -M master -x utf8.dict -- ./bin_asan'
         tmux new-window -t my_session:1 -n Window2 '$(AFL_PATH)afl-fuzz -i in -o out -S slave1 -x utf8.dict -- ./bin_asan'
         tmux new-window -t my_session:2 -n Window3 '$(AFL_PATH)afl-fuzz -i in -o out -S slave2 -x utf8.dict -- ./bin_asan'
