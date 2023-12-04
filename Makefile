@@ -15,8 +15,9 @@ help:
 	@echo "  debug           : Build the application with AFL and ASAN for debugging"
 	@echo "  clean           : Remove object files"
 	@echo "  fuzz            : Run AFL fuzzing sessions"
-	@echo "  coverage        : Generate code coverage report"
 	@echo "  coverage_build  : Build the application with code coverage instrumentation"
+	@echo "  coverage        : Generate code coverage report"
+	
 
 
 all: 
