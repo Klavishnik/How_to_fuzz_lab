@@ -168,5 +168,3 @@ make fuzz
 ```bash
 make coverage
 ```
-
-И все пойдет само.
