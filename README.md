@@ -44,7 +44,8 @@ Available targets:
   clean           : Remove object files                                  
   fuzz            : Run AFL fuzzing sessions                                 // Запуск фаззинг тестирования
   coverage_build  : Build the application with code coverage instrumentation // Сборка бинаря специально для получения покрытия кода
-  coverage        : Generate code coverage report                            // Запуск генерации отчета по покрытию
+  coverage        : Generate code coverage report with gcc and lcov          // Сборка покрытия кода через gcov с генерацией html отчета
+	coverage_clang  : Generate code coverage report with clang and llvm-cov    // Сборка покрытия кода через llvm-cov с генерацией html отчета
   
 ```
 
@@ -105,6 +106,25 @@ Overall coverage rate:
   functions..: 33.3% (1 of 3 functions)
 ```
 В корневой директории так же появится папка `report` с отчетом покрытия кода в формате html.
+
+#### Покрытие можно собрать еще с помощью clang
+
+Для этого выполнлить 
+```
+make coverage_clang
+```
+
+Будет примерно такой вывод в консоль:
+```
+Filename                      Regions    Missed Regions     Cover   Functions  Missed Functions  Executed       Lines      Missed Lines     Cover    Branches   Missed Branches     Cover
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+lib/string.c                        6                 0   100.00%           2                 0   100.00%          15                 0   100.00%           4                 0   100.00%
+main.c                              5                 1    80.00%           1                 0   100.00%          11                 1    90.91%           2                 1    50.00%
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+TOTAL                              11                 1    90.91%           3                 0   100.00%          26                 1    96.15%           6                 1    83.33%
+```
+
+И в `coverage_clang_report` будет сохранен html отчет
 
 
 
