@@ -12,12 +12,14 @@ TARGET_LIB=lib
 
 help:
 	@echo "Available targets:"
-	@echo "  build           : Build the main application"
-	@echo "  debug           : Build the application with AFL and ASAN for debugging"
-	@echo "  clean           : Remove object files"
-	@echo "  fuzz            : Run AFL fuzzing sessions"
-	@echo "  coverage_build  : Build the application with code coverage instrumentation"
-	@echo "  coverage        : Generate code coverage report"
+	@echo "  build           	 : Build the main application"
+	@echo "  debug           	 : Build the application with AFL and ASAN for debugging"
+	@echo "  clean           	 : Remove object files"
+	@echo "  fuzz            	 : Run AFL fuzzing sessions"
+	@echo "  coverage       	 : Generate code coverage report with gcc and lcov"
+	@echo "  coverage_clang      : Generate code coverage report with clang and llvm-cov"
+	@echo "  coverage_build_gcc  : Build the application with code coverage instrumentation"
+	
 	
 build: 
 	$(CC) -c $(TARGET) $(CFLAGS) -o main.o
@@ -76,7 +78,7 @@ coverage_clang: coverage_build_clang
 
 coverage_build: coverage_build_gcc
 
-coverage:coverage_gcc
+coverage: coverage_gcc
 
 clean:
 	rm -rf in $(BIN)* *.gcno *.gcda  *.info foo.profdata default.profraw 
