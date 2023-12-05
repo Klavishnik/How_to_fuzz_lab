@@ -18,7 +18,6 @@ help:
 	@echo "  fuzz            	 : Run AFL fuzzing sessions"
 	@echo "  coverage       	 : Generate code coverage report with gcc and lcov"
 	@echo "  coverage_clang      : Generate code coverage report with clang and llvm-cov"
-	@echo "  coverage_build_gcc  : Build the application with code coverage instrumentation"
 	
 	
 build: 
