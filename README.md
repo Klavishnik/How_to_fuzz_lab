@@ -45,7 +45,7 @@ Available targets:
   fuzz            : Run AFL fuzzing sessions                                 // Запуск фаззинг тестирования
   coverage_build  : Build the application with code coverage instrumentation // Сборка бинаря специально для получения покрытия кода
   coverage        : Generate code coverage report with gcc and lcov          // Сборка покрытия кода через gcov с генерацией html отчета
-	coverage_clang  : Generate code coverage report with clang and llvm-cov    // Сборка покрытия кода через llvm-cov с генерацией html отчета
+  coverage_clang  : Generate code coverage report with clang and llvm-cov    // Сборка покрытия кода через llvm-cov с генерацией html отчета
   
 ```
 
